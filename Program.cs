@@ -1,7 +1,4 @@
-﻿using ConsoleApp1;
-using Test;
-
-
+﻿using System;
 internal class Program
 {
     private static void Main(string[] args)
@@ -26,7 +23,6 @@ internal class Program
         Console.WriteLine("Массив, где удалены все повторяющиеся элементы: ");
         arrRemoveDupl.RemoveDuplicates();
         arrRemoveDupl.PrintArray();
-
 
 
         Console.WriteLine("Вводим размеры:");
@@ -60,36 +56,36 @@ internal class Program
             values[i] = int.Parse(Console.ReadLine());
         }
 
-        Array3 randArr = new Array3(rows, values);
+        Array3 randArray = new Array3(rows, values);
 
         Console.WriteLine("Ступенчатый массив с рандомными значениями:");
-        randArr.PrintArray();
+        randArray.PrintArray();
 
-        Console.WriteLine($"Среднее: {randArr.Average()}");
-        randArr.ModifyArray();
+        Console.WriteLine($"Среднее: {randArray.Average()}");
+        randArray.ModifyArray();
 
-        foreach (double i in randArr.GetAverages())
+        foreach (double i in randArray.GetAverages())
         {
             Console.WriteLine($"Среднее для вложенного массива: {i}");
         }
 
         Console.WriteLine("Измененный: ");
-        randArr.PrintArray();
+        randArray.PrintArray();
 
-        Array3 userArr = new Array3(rows);
+        Array3 userArray = new Array3(rows);
 
         Console.WriteLine("\nСтупенчатый массив с вводом значений пользователем:");
-        userArr.PrintArray();
+        userArray.PrintArray();
 
-        Console.WriteLine($"Среднее: {userArr.Average()}");
+        Console.WriteLine($"Среднее: {userArray.Average()}");
 
-        foreach (double i in userArr.GetAverages())
+        foreach (double i in userArray.GetAverages())
         {
             Console.WriteLine($"Среднее для вложенного массива: {i}");
         }
 
         Console.WriteLine("Измененный: ");
-        userArr.ModifyArray();
-        userArr.PrintArray();
+        userArray.ModifyArray();
+        userArray.PrintArray();
     }
 }
