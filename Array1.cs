@@ -57,31 +57,33 @@ public class Array1
 
     public void RemoveElements()
     {
-        int[] newArray = new int[array.Length];
+        int[] ar = array;
+        int[] newArray = new int[ar.Length];
         int j = 0;
-        for (int i = 0; i < array.Length; i++)
+        for (int i = 0; i < ar.Length; i++)
         {
-            if (Math.Abs(array[i]) <= 100)
+            if (Math.Abs(ar[i]) <= 100)
             {
-                newArray[j] = array[i];
+                newArray[j] = ar[i];
                 j++;
             }
         }
         Array.Resize(ref newArray, j);
-        array = newArray;
+        ar = newArray;
     }
 
 
 
     public void RemoveDuplicates()
     {
+        int[] a = array;
         int count = 0;
-        for (int i = 0; i < array.Length; i++)
+        for (int i = 0; i < a.Length; i++)
         {
             bool isDuplicate = false;
             for (int j = 0; j < i; j++)
             {
-                if (array[i] == array[j])
+                if (a[i] == a[j])
                 {
                     isDuplicate = true;
                     break;
@@ -95,12 +97,12 @@ public class Array1
 
         int[] result = new int[count];
         count = 0;
-        for (int i = 0; i < array.Length; i++)
+        for (int i = 0; i < a.Length; i++)
         {
             bool isDuplicate = false;
             for (int j = 0; j < i; j++)
             {
-                if (array[i] == array[j])
+                if (a[i] == a[j])
                 {
                     isDuplicate = true;
                     break;
@@ -108,11 +110,11 @@ public class Array1
             }
             if (!isDuplicate)
             {
-                result[count] = array[i];
+                result[count] = a[i];
                 count++;
             }
         }
-        array = result;
+        a = result;
     }
 
 
